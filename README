@@ -1,0 +1,19 @@
+DexGuard, mobile application protection for Android
+===================================================
+
+This distribution contains the following directories:
+
+- docs    : The complete documentation in html format.
+- samples : Small example projects that can be used as a reference.
+- bin     : Wrapper scripts to run DexGuard and ReTrace from the command line.
+- lib     : The DexGuard jar and aar files and the DexGuard plugin.
+- studio  : An Android Studio plugin for syntax highlighting and autocompletion
+            in DexGuard configuration files.
+- cordova : A Cordova plugin to help integrate DexGuard into a Cordova project.
+
+The best place to start is the Quick Start section in docs/index.html.
+
+
+https://www.guardsquare.com/
+
+Copyright (c) 2002-2023 Guardsquare NV

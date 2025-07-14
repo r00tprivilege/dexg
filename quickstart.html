@@ -1,0 +1,3677 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the DexGuard tool">
+      
+      
+        <meta name="author" content="Guardsquare">
+      
+      
+      
+        <link rel="prev" href="platform.html">
+      
+      
+        <link rel="next" href="video-tutorials/menu.html">
+      
+      
+      <link rel="icon" href="img/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+    
+    
+      
+        <title>Manual Configuration - DexGuard</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family='',+'Helvetica+Neue',+Helvetica,+Arial,+sans-serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"'', 'Helvetica Neue', Helvetica, Arial, sans-serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/guardsquare.css">
+    
+      <link rel="stylesheet" href="css/extra2.css">
+    
+      <link rel="stylesheet" href="css/text-alignment.css">
+    
+      <link rel="stylesheet" href="css/admonition-styles.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NMXSB9');</script>
+<!-- End Google Tag Manager -->
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="guardsquare" data-md-color-accent="guardsquare">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prepare_development_environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMXSB9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+   
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="DexGuard" class="md-header__button md-logo" aria-label="DexGuard" data-md-component="logo">
+      
+  <img src="img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DexGuard
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manual Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="DexGuard" class="md-nav__button md-logo" aria-label="DexGuard" data-md-component="logo">
+      
+  <img src="img/logo.png" alt="logo">
+
+    </a>
+    DexGuard
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Quick Start
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="platform.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guided Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Manual Configuration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="quickstart.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Manual Configuration
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prepare_development_environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare your development environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare your development environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugin-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the Gradle plugin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dexguard-gradle-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring the DexGuard Gradle plugin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-configuration-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated configuration phase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improve-your-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improve your protection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improve your protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitor-your-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitor your application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-go-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you go live
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you go live">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-only-well-protected-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release only well-protected versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-your-crash-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check your crash reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consider-threat-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consider threat reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan-deprecation-of-your-unprotected-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plan deprecation of your unprotected application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="video-tutorials/menu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setup/downloading-dexguard.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Downloading DexGuard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setup/gradle-plugin.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gradle Plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setup/standalone.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standalone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setup/upgrading.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setup/repository.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maven Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setup/espresso.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Espresso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setup/cordovaplugin.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cordova Plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Configuration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="defaultconfigurations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Default Configs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annotations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usage.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RASP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            RASP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rasp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="features/hardware.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS Integrity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="threatcast.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ThreatCast
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="features/attestation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App Attestation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="features/malware.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Malware Protection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="protection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code & Data Protection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Languages & Platforms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Languages & Platforms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/java.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/kotlin.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kotlin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/hermes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hermes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    JavaScript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_2" id="__nav_8_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quick Start
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/quickstart/dexguardintegration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DexGuard Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/quickstart/bestpractices.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_3" id="__nav_8_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Configuration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/configuration/configuration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Configuration Options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/configuration/filters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/configuration/assumptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assumptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4" id="__nav_8_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/shrinking.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shrinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2" id="__nav_8_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Protection
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Protection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2_1" id="__nav_8_4_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_8_4_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2_1_1" id="__nav_8_4_4_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_8_4_4_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Strings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/stringencryption.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encryption
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/stringarray.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Array Transformation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2_2" id="__nav_8_4_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_8_4_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/nameobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Name Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/functionencryption.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Encryption
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/numberobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Number Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/arithmeticobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arithmetic Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/controlflowobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control Flow Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/propertydeclarationobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Property Declaration Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/propertyaccessobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Property Access Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/shuffling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shuffling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2_3" id="__nav_8_4_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Environment
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_8_4_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Environment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/features/debuggerobstruction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugger Obstruction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_5" id="__nav_8_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/trouble-shooting/knownlimitations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Known Issues and Limitations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_6" id="__nav_8_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/javascript/about/release-notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Flutter
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            Flutter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/flutter/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/flutter/start-android.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/flutter/building-on-windows.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/flutter/configuration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/flutter/filters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/flutter/callbacks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="languages_platforms/flutter/troubleshooting.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    In Depth
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            In Depth
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/protectionreport/protectionreport.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protection Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/pgo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profile-Guided Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/refcard.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Card
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/optimizations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/attributes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attributes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/loggingremoval.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logging Removal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/runtime.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime Library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/codepush.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Push
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="indepth/apkexpansionfiles.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APK Expansion Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Addons
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="addons/ndk.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tools/androidstudio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android Studio Plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tools/libraryrulesgenerator.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Library Rules Generator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tools/retrace.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ReTrace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting/knownissues.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Known Issues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting/reportingissues.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reporting Issues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about/releasenotes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about/systemrequirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about/license.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prepare_development_environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare your development environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prepare your development environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugin-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the Gradle plugin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dexguard-gradle-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring the DexGuard Gradle plugin
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-configuration-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated configuration phase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improve-your-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improve your protection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improve your protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitor-your-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitor your application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-go-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you go live
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you go live">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-only-well-protected-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Release only well-protected versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-your-crash-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check your crash reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consider-threat-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consider threat reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan-deprecation-of-your-unprotected-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plan deprecation of your unprotected application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Manual Configuration</h1>
+
+<h2 id="prepare_development_environment">Prepare your development environment<a class="headerlink" href="#prepare_development_environment" title="Permanent link">&para;</a></h2>
+<p>DexGuard is available through Maven.
+If you plan to integrate DexGuard in your Gradle build process with Maven,
+please follow the instructions on the <a href="setup/repository.html" target="_blank">Maven configuration</a> page
+and skip forward to the <a href="quickstart.html#dexguard-gradle-block">DexGuard configuration</a> step.</p>
+<p>If you want to manage your DexGuard installation locally, make sure you have the right tools and components in place.</p>
+<ol>
+<li>Log in to the <a href="https://platform.guardsquare.com" target="_blank">Guardsquare website</a>.</li>
+<li>Download the DexGuard software and your license file <code>dexguard-license.txt</code> and install them on your local system.</li>
+</ol>
+<details class="question">
+<summary>Not using Gradle?</summary>
+<p>If you don't want to integrate DexGuard in your Gradle build, or you are not using Gradle at all,
+you can run DexGuard directly from the command line.
+Detailed instructions can be found in the <a href="setup/standalone.html" target="_blank">standalone mode</a> page.
+Please follow these instructions and skip forward to the <a href="quickstart.html#automated-configuration-phase">automated configuration</a>
+step.</p>
+</details>
+<p>If you are using hybrid app development, see also the technology
+guidance for</p>
+<ul>
+<li><a href="languages_platforms/flutter/index.html">Flutter apps</a></li>
+<li><a href="languages_platforms/javascript/index.html">JavaScript hybrid apps</a></li>
+</ul>
+<h3 id="plugin-setup">Setting up the Gradle plugin<a class="headerlink" href="#plugin-setup" title="Permanent link">&para;</a></h3>
+<p>The DexGuard Gradle plugin is available in the <code>lib</code> folder of your DexGuard distribution.
+It can easily be added to your project by making the changes highlighted in the code snippet below.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="kotlin---plugins-dsl" name="__tabbed_1" type="radio" /><input id="kotlin---buildscript" name="__tabbed_1" type="radio" /><input id="groovy---plugins-dsl" name="__tabbed_1" type="radio" /><input id="groovy---buildscript" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="kotlin---plugins-dsl">Kotlin - Plugins DSL</label><label for="kotlin---buildscript">Kotlin - Buildscript</label><label for="groovy---plugins-dsl">Groovy - Plugins DSL</label><label for="groovy---buildscript">Groovy - Buildscript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="language-Kotlin highlight"><span class="filename">settings.gradle.kts</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">pluginManagement</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">repositories</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="hll"><span class="w">        </span><span class="n">maven</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="n">uri</span><span class="p">(</span><span class="s">&quot;/path/to/DexGuard/lib&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span></span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-Toml highlight"><span class="filename">gradle/libs.versions.toml</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[versions]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;+&quot;</span>
+</span></span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">[plugins]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;com.guardsquare.dexguard&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="p">.</span><span class="n">ref</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;dexguard&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="language-Kotlin highlight"><span class="filename">build.gradle.kts</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">buildscript</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">repositories</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="hll"><span class="w">        </span><span class="n">maven</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="n">uri</span><span class="p">(</span><span class="s">&quot;/path/to/DexGuard/lib&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+</span></span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="hll"><span class="w">        </span><span class="n">classpath</span><span class="p">(</span><span class="s">&quot;com.guardsquare:dexguard-gradle-plugin:+&quot;</span><span class="p">)</span>
+</span></span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><div class="language-groovy highlight"><span class="filename">settings.gradle</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pluginManagement</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="hll"><span class="w">        </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="s1">&#39;/path/to/DexGuard-x.y.z/lib&#39;</span><span class="w"> </span><span class="o">}</span>
+</span></span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="o">}</span>
+</span></code></pre></div>
+<div class="language-Toml highlight"><span class="filename">gradle/libs.versions.toml</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[versions]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;+&quot;</span>
+</span></span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">[plugins]</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;com.guardsquare.dexguard&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="p">.</span><span class="n">ref</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;dexguard&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="language-groovy highlight"><span class="filename">build.gradle</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">buildscript</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="hll"><span class="w">        </span><span class="n">url</span><span class="w"> </span><span class="s1">&#39;/path/to/DexGuard/lib&#39;</span>
+</span></span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="hll"><span class="w">    </span><span class="n">classpath</span><span class="w"> </span><span class="s1">&#39;com.guardsquare:dexguard-gradle-plugin:+&#39;</span>
+</span></span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="o">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<details class="bug">
+<summary>Avoid modifying your DexGuard installation</summary>
+<p>In case you <strong>need</strong> to copy the DexGuard plugin to a different location, make sure to copy the whole
+directory structure located in <code>/path/to/DexGuard/lib</code>.</p>
+</details>
+<h3 id="dexguard-gradle-block">Configuring the DexGuard Gradle plugin<a class="headerlink" href="#dexguard-gradle-block" title="Permanent link">&para;</a></h3>
+<p>Now that the DexGuard plugin is added to your project, you can apply and
+configure DexGuard using a <code>dexguard</code> configuration block.
+This is a top-level configuration block and should be placed outside the <code>android</code> block.</p>
+<p>The snippets below show the minimum configuration required to execute DexGuard automatically for the
+<code>release</code> variant of an application.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="kotlin" name="__tabbed_2" type="radio" /><input id="groovy---plugins-dsl_1" name="__tabbed_2" type="radio" /><input id="groovy---buildscript_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="kotlin">Kotlin</label><label for="groovy---plugins-dsl_1">Groovy - Plugins DSL</label><label for="groovy---buildscript_1">Groovy - Buildscript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="language-kotlin highlight"><span class="filename">app/build.gradle.kts</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="hll"><span class="w">    </span><span class="n">alias</span><span class="p">(</span><span class="n">libs</span><span class="p">.</span><span class="na">plugins</span><span class="p">.</span><span class="na">dexguard</span><span class="p">)</span>
+</span></span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="hll"><span class="w">    </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/path/to/DexGuard&quot;</span>
+</span></span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="hll"><span class="w">    </span><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/path/to/dexguard-license.txt&quot;</span>
+</span></span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="hll"><span class="w">    </span><span class="n">configurations</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="hll"><span class="w">        </span><span class="n">register</span><span class="p">(</span><span class="s">&quot;release&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span></span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="hll"><span class="w">            </span><span class="n">defaultConfiguration</span><span class="p">(</span><span class="s">&quot;dexguard-release.pro&quot;</span><span class="p">)</span>
+</span></span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="hll"><span class="w">        </span><span class="p">}</span><span class="w">                               </span>
+</span></span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="hll"><span class="w">    </span><span class="p">}</span>
+</span></span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="hll"><span class="p">}</span>
+</span></span></code></pre></div>
+<div class="language-Toml highlight"><span class="filename">gradle/libs.versions.toml</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[versions]</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;+&quot;</span>
+</span></span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">[plugins]</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;com.guardsquare.dexguard&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="p">.</span><span class="n">ref</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;dexguard&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p><div class="language-groovy highlight"><span class="filename">app/build.gradle</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">plugins</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="hll"><span class="w">    </span><span class="n">alias</span><span class="o">(</span><span class="n">libs</span><span class="o">.</span><span class="na">plugins</span><span class="o">.</span><span class="na">dexguard</span><span class="o">)</span>
+</span></span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="o">}</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">{</span>
+</span></span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="hll"><span class="w">  </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/DexGuard&#39;</span>
+</span></span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="hll"><span class="w">  </span><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/dexguard-license.txt&#39;</span>
+</span></span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="hll"><span class="w">  </span><span class="n">configurations</span><span class="w"> </span><span class="o">{</span>
+</span></span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="hll"><span class="w">    </span><span class="n">release</span><span class="w"> </span><span class="o">{</span>
+</span></span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="hll"><span class="w">      </span><span class="n">defaultConfiguration</span><span class="w"> </span><span class="s1">&#39;dexguard-release.pro&#39;</span>
+</span></span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="hll"><span class="w">    </span><span class="o">}</span>
+</span></span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="hll"><span class="w">  </span><span class="o">}</span>
+</span></span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="hll"><span class="o">}</span>
+</span></span></code></pre></div>
+<div class="language-Toml highlight"><span class="filename">gradle/libs.versions.toml</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[versions]</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;+&quot;</span>
+</span></span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">[plugins]</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="hll"><span class="n">dexguard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;com.guardsquare.dexguard&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="p">.</span><span class="n">ref</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;dexguard&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></span></code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<div class="language-groovy highlight"><span class="filename">app/build.gradle</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">apply</span><span class="w"> </span><span class="nl">plugin:</span><span class="w"> </span><span class="s1">&#39;com.guardsquare.dexguard&#39;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">dexguard</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/DexGuard&#39;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/dexguard-license.txt&#39;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="n">configurations</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="n">release</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">      </span><span class="n">defaultConfiguration</span><span class="w"> </span><span class="s1">&#39;dexguard-release.pro&#39;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="o">}</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>The <code>path</code> option specifies where to find your DexGuard installation.
+If you are using the maven distribution, this option is not required.</p>
+<p>The <code>license</code> option indicates where your license file can be found.</p>
+<p>In the <code>configurations</code> block, you should specify which build variants you want DexGuard to protect.
+In the example snippets, the <code>release</code> variant is configured.</p>
+<p>The default configuration <code>defaultConfiguration</code> contains pre-defined, required configuration options.</p>
+<details class="danger">
+<summary>Disable ProGuard &amp; R8!</summary>
+<p>DexGuard expects its inputs to be <strong>unobfuscated</strong>! Make sure the variants you want to protect
+have the <code>minifyEnabled</code> and <code>shrinkResources</code> options set to <code>false</code> in the <code>android</code> Gradle block.
+<div class="language-groovy highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">android</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">buildTypes</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">        </span><span class="n">release</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="hll"><span class="w">            </span><span class="n">minifyEnabled</span><span class="w"> </span><span class="kc">false</span>
+</span></span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="hll"><span class="w">            </span><span class="n">shrinkResources</span><span class="w"> </span><span class="kc">false</span>
+</span></span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="o">}</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="o">}</span>
+</span></code></pre></div></p>
+</details>
+<p>At this point, DexGuard is completely integrated in your build process and will be executed when you
+build your application.
+Please verify your setup by building your application 
+(<code>./gradlew bundle</code> for a bundle or <code>./gradlew assemble</code> for an apk).</p>
+<p>If everything was set up correctly, a protected version of your application was created
+alongside the unprotected version with a <strong><code>-protected</code></strong> suffix.</p>
+<details class="tip">
+<summary>Unable to build your application?</summary>
+<p>To verify that your environment is set up correctly, try and build one of the samples included
+in the DexGuard distribution. Compare the setup of the samples to your own.</p>
+</details>
+<p>The <code>build/outputs/dexguard</code> directory contains several other outputs.
+Most notably, a <a href="#improve-your-protection"><strong>Protection Report</strong></a> can be found under <code>build/outputs/dexguard/report</code>.
+This report indicates the level of protection of your application and will be your
+main guideline when configuring additional protections later.</p>
+<p>The Gradle plugin will automatically configure DexGuard to sign the protected app
+using the same key that was used to sign the original app. 
+So you don't have to explicitly configure DexGuard to sign the processed app.</p>
+<details class="warning">
+<summary>Default Android Studio <code>install</code> task</summary>
+<p>The Android Gradle Plugin <code>install</code> task will install the <strong>unprotected</strong> application.
+If you want to test the protected application instead, you can use <code>adb</code> to install the
+protected application from the command line.
+E.g. <code>adb install build/outputs/apk/release/MyApp-release-protected.apk</code>.</p>
+<p>Alternatively, consider using the <a href="setup/gradle-plugin.html#overwriteunprotected">** <code>overwriteUnprotected</code> **</a> option
+to overwrite the unprotected version. The protected apk will then no longer have the <em>-protected</em> suffix, and will
+be recognized by the <code>install</code> task. <strong>This may cause unexpected Gradle caching results!</strong></p>
+</details>
+<h2 id="automated-configuration-phase">Automated configuration phase<a class="headerlink" href="#automated-configuration-phase" title="Permanent link">&para;</a></h2>
+<p>At this point, you have completed your first successful protected build, congratulations!
+Go ahead and try running it on an emulator or test device.</p>
+<p>Did your protected application crash? <strong>Do not worry, this is expected!</strong></p>
+<p>You are likely facing runtime crashes due to reflection in your application.
+Reflection uses strings to find entities directly, but since DexGuard has obfuscated the names of these entities,
+the reflection calls in your application are not able to find the referred entities,
+and are throwing various forms of exceptions that indicate some entity could not be found.</p>
+<p>To solve this issue, all entities that are accessed by reflection should be targeted by <strong>keep rules</strong>.
+These keep rules preserve reflective accesses by keeping the names of the entities.</p>
+<div class="admonition tip">
+<p class="admonition-title">Reusing your existing ProGuard &amp; R8 configurations</p>
+<p>DexGuard is backward compatible with ProGuard and R8.
+As such you can reuse your ProGuard configuration files.
+However, inclusion of a <code>proguard-project.txt</code> configuration is not mandatory.</p>
+</div>
+<p>Manually figuring out the required set of keep rules can only be done one keep rule at a time:</p>
+<ol>
+<li>Build, launch and explore the application until it crashes,</li>
+<li>Check which entity was reflected and caused the crash,</li>
+<li>Add a keep rule for that entity,</li>
+<li>Rebuild the application and repeat the process.</li>
+</ol>
+<p>This is a very time-consuming effort. 
+Instead, DexGuard can build an instrumented version of your application that automatically collects the
+required keep rules and does not crash at runtime.
+This feature enables you to collect all keep rules using a single build,
+rather than having to repeat the process for each keep rule!</p>
+<p>Additionally, this instrumented build gathers performance data which DexGuard leverages during the
+protection run to ensure acceptable performance impact when injecting 
+Runtime Application Self Protections (referred to as <a href="rasp.html" target="_base">RASP</a>).
+This will become relevant when setting up advanced protections later.</p>
+<p>To build the instrumented version, simply follow the next steps:</p>
+<ol>
+<li>Add a <code>dexguard-project.txt</code> file to your project.</li>
+<li>Add the <a href="usage.html#addconfigurationdebugging"><code>-addconfigurationdebugging</code></a>
+   and <a href="usage.html#addprofiling"><code>-addprofiling</code></a> configuration options to the configuration.
+    <div class="language-text highlight"><span class="filename">dexguard-project.txt</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>-addconfigurationdebugging
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>-addprofiling
+</span></code></pre></div></li>
+<li>
+<p>Include the configuration when running DexGuard.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="gradle" name="__tabbed_3" type="radio" /><input id="standalone" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="gradle">Gradle</label><label for="standalone">Standalone</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-groovy highlight"><span class="filename">DexGuard plugin block</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">dexguard</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/DexGuard&#39;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/dexguard-license.txt&#39;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="n">configurations</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="n">release</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">      </span><span class="n">defaultConfiguration</span><span class="w"> </span><span class="s1">&#39;dexguard-release.pro&#39;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="hll"><span class="w">      </span><span class="n">configuration</span><span class="w"> </span><span class="s1">&#39;/path/to/dexguard-project.txt&#39;</span>
+</span></span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="o">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bin/dexguard.sh<span class="w"> </span>-injars<span class="w"> </span>path/to/my-application.apk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">                </span>-outjars<span class="w"> </span>path/to/obfuscated-application.apk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">                </span>-androidsdk<span class="w"> </span>path/to/android/sdk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">                </span>-include<span class="w"> </span>/lib/dexguard-release.pro<span class="w"> </span><span class="se">\ </span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="hll"><span class="w">                </span>-include<span class="w"> </span>path/to/dexguard-project.txt<span class="w"> </span><span class="se">\</span>
+</span></span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">                </span>-keystore<span class="w"> </span>path/to/keystore<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">                </span>-keyalias<span class="w"> </span>your_key_alias<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">                </span>-keypassword<span class="w"> </span>your_key_password<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">                </span>-keystorepassword<span class="w"> </span>your_keystore_password
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Why your instrumented application looks different</p>
+<ul>
+<li>This configuration only performs name obfuscation. Advanced protection features are disabled.</li>
+<li>Your application is prevented from being released on the Google Play Store.</li>
+<li>The icon of your application will be changed to the DexGuard icon to indicate an instrumented build.</li>
+<li>Once you have your debug configuration, you should discard this build and remove the options from your configuration.</li>
+</ul>
+</div>
+<p>Once your instrumented application is built, run it on a device and extensively explore your application.
+In the <code>logcat</code>, your application will now print keep rule recommendations whenever a reflection call
+is encountered.
+Additionally, these keep rules and some performance metrics are collected to files on the device.
+Instructions for retrieving these files can be found in <code>logcat</code> and will have the following formats:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Writing rule suggestions to &lt;path&gt;: use `adb pull &lt;path&gt;` to retrieve the file from the device.
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Writing profiling data to device storage. Use `adb pull &lt;path&gt;` to retrieve the file.
+</span></code></pre></div>
+<p>After running the suggested <code>adb pull</code> commands in your project directory, you will have:</p>
+<ul>
+<li>a <code>dexguard-debugging-rules.txt</code> file to prevent runtime crashes due to reflection.</li>
+<li>a <code>profilingdata.pb</code> file to manage performance impact when injecting RASP.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">Explore extensively!</p>
+<p>It is important that you explore your instrumented application thoroughly.
+Unexplored code paths will not be covered by the generated configuration and may remain unstable!</p>
+</div>
+<p>To conclude the automated configuration phase:</p>
+<ol>
+<li>Remove the instrumentation options from your <code>dexguard-project.txt</code> file.</li>
+<li>
+<p>Include the generated <code>dexguard-debugging-rules.txt</code> configuration.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="gradle_1" name="__tabbed_4" type="radio" /><input id="standalone_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="gradle_1">Gradle</label><label for="standalone_1">Standalone</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-groovy highlight"><span class="filename">DexGuard plugin block</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">dexguard</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/DexGuard&#39;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;/path/to/dexguard-license.txt&#39;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="n">configurations</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="n">release</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">      </span><span class="n">defaultConfiguration</span><span class="w"> </span><span class="s1">&#39;dexguard-release.pro&#39;</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="hll"><span class="w">      </span><span class="n">configuration</span><span class="w"> </span><span class="s1">&#39;/path/to/dexguard-debugging-rules.txt&#39;</span>
+</span></span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">      </span><span class="n">configuration</span><span class="w"> </span><span class="s1">&#39;/path/to/dexguard-project.txt&#39;</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="o">}</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span><span class="o">}</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="o">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>bin/dexguard.sh<span class="w"> </span>-injars<span class="w"> </span>path/to/my-application.apk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">                </span>-outjars<span class="w"> </span>path/to/obfuscated-application.apk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">                </span>-androidsdk<span class="w"> </span>path/to/android/sdk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">                </span>-include<span class="w"> </span>/lib/dexguard-release.pro<span class="w"> </span><span class="se">\ </span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="hll"><span class="w">                </span>-include<span class="w"> </span>path/to/dexguard-debugging-rules.txt<span class="w"> </span><span class="se">\</span>
+</span></span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">                </span>-include<span class="w"> </span>path/to/dexguard-project.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">                </span>-keystore<span class="w"> </span>path/to/keystore<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">                </span>-keyalias<span class="w"> </span>your_key_alias<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">                </span>-keypassword<span class="w"> </span>your_key_password<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">                </span>-keystorepassword<span class="w"> </span>your_keystore_password
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+<p>That concludes the basic configuration phase!
+You should now be able to build a minimally protected version of your application that doesn't crash at runtime.
+If your application still crashes, perhaps the 
+<a href="troubleshooting.html#quick-troubleshooting">troubleshooting</a> page can offer  a solution.</p>
+<h2 id="improve-your-protection">Improve your protection<a class="headerlink" href="#improve-your-protection" title="Permanent link">&para;</a></h2>
+<p>Now that you have your first stable protected build, it is time to improve the security of your application.</p>
+<p>An invaluable resource to do that is the <a href="indepth/protectionreport/protectionreport.html" target="_blank">Protection Report</a> we mentioned earlier.
+If you have integrated DexGuard in your Gradle process, the report is located at <code>build/outputs/dexguard/report</code>.
+Users of standalone mode first have to specify the location where the report can be generated.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>bin/dexguard.sh<span class="w"> </span>-injars<span class="w"> </span>path/to/my-application.apk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">                </span>-outjars<span class="w"> </span>path/to/obfuscated-application.apk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">                </span>-androidsdk<span class="w"> </span>path/to/android/sdk<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">                </span>-include<span class="w"> </span>/lib/dexguard-release.pro<span class="w"> </span><span class="se">\ </span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">                </span>-include<span class="w"> </span>path/to/dexguard-debugging-rules.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">                </span>-include<span class="w"> </span>path/to/dexguard-project.txt<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="hll"><span class="w">                </span>-protectionreportdirectory<span class="w"> </span>/path/to/report-directory<span class="w"> </span><span class="se">\</span>
+</span></span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">                </span>-keystore<span class="w"> </span>path/to/keystore<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">                </span>-keyalias<span class="w"> </span>your_key_alias<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">                </span>-keypassword<span class="w"> </span>your_key_password<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">                </span>-keystorepassword<span class="w"> </span>your_keystore_password
+</span></code></pre></div>
+<p>Depending on the threat model for your application, prioritize your work
+on different protection techniques and improve your score in relevant risk categories.</p>
+<p>We recommend the following iterative approach when enabling advanced protection features.</p>
+<ol>
+<li>Identify your most relevant security metric(s) in the <a href="indepth/protectionreport/protectionreport.html" target="_blank">Protection Report</a>,
+   and discover which of DexGuard's features contribute to it.</li>
+<li>Click on a disabled feature to get redirected to the relevant section in the manual.</li>
+<li>Configure the feature in your <code>dexguard-project.txt</code> file by following the manual.</li>
+<li>Rebuild your application.</li>
+<li>Test the application for stability and performance.</li>
+<li>Tune the configuration to fix any issues prior to enabling the next protection feature.</li>
+<li>Repeat the previous step for the next feature.</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Layered protection</p>
+<p>The different protection features reinforce each other. This is why setting up all the protection layers is important.
+We recommend scoring <strong>grade A</strong> in every category in the Protection Report.</p>
+</div>
+<h3 id="monitor-your-application">Monitor your application<a class="headerlink" href="#monitor-your-application" title="Permanent link">&para;</a></h3>
+<p>We recommend the iterative approach because it gives you an indication of the impact a particular feature
+has on your application.
+This way, when things go wrong, you know exactly what feature caused the issue, and you can reconfigure it
+accordingly.</p>
+<p>Below, we'll touch on the most common issues you may encounter when configuring advanced protections.</p>
+<h4 id="poor-app-performance">Poor app performance<a class="headerlink" href="#poor-app-performance" title="Permanent link">&para;</a></h4>
+<p>The most common issue you may encounter at this stage is app performance problems.
+This is expected and can often be easily addressed.</p>
+<p>The most common reason for decreased app performance is that you have enabled a feature with a
+high performance impact on a performance-sensitive class or method.</p>
+<p>Most notably, while our RASP checks are very powerful, some are very expensive (e.g. the hook detector).
+This is where the <code>profilingdata.pb</code> file, generated by the instrumentation build, will help.
+Add the <code>-profilingdata /path/to/profilingdata.pb</code> option to your configuration as an initial indication
+of performance-sensitive code for DexGuard.
+If you notice performance is still poor, you can exclude specific performance-sensitive areas of your code
+from being injected into by using the <a href="rasp.html#excluding-injection-locations"><code>-raspdenylist</code></a> option.</p>
+<p>You can find an <strong>impact table</strong> for each feature on the <a href="protection.html" target="_blank">protection overview</a> page.
+Limit the use of features with medium to high performance impact to the security-sensitive parts of your code.</p>
+<h4 id="application-size-increase">Application size increase<a class="headerlink" href="#application-size-increase" title="Permanent link">&para;</a></h4>
+<p>You may find that the size of your application has increased too much. 
+Double check that you haven't been too aggressive with the applied level of hardening of the feature
+you are currently tuning. </p>
+<ul>
+<li>All encryption features require DexGuard to inject decryption code into your application,
+  so they will have a direct impact on your app's size. 
+  You might consider narrowing down the allowlist for which you enabled such features.
+  Encrypting all strings or classes is overkill; focus on the most security-sensitive ones instead. </li>
+<li>DexGuard's RASP features inject code snippets with small checks into your application. 
+  You can reduce the amount of injected checks by reducing the aggressiveness level. </li>
+<li>Code obfuscation has an option to tweak the aggressiveness level. 
+  Find a balance in setting it higher for security-sensitive methods, lower for other methods.</li>
+</ul>
+<h4 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h4>
+<p>It is important to test your application but there are certain
+limitations to be aware of when testing applications protected by DexGuard.</p>
+<p><strong>Unit testing is not possible</strong> because</p>
+<ul>
+<li>DexGuard changes the internals of your application.</li>
+<li>DexGuards features rely on the Android environment and this cannot easily be mocked.</li>
+</ul>
+<p><strong>Integration testing is only possible with end-to-end tests</strong> because checking internal application state is not possible.</p>
+<details class="info">
+<summary>Supported integration testing frameworks</summary>
+<ul>
+<li><a href="setup/espresso.html">Espresso</a></li>
+<li>Appium<ul>
+<li>UI elements can be selected using the UI tree.</li>
+<li>Element IDs can be used only if kept by adding additional keep rules to your configuration.</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="before-you-go-live">Before you go live<a class="headerlink" href="#before-you-go-live" title="Permanent link">&para;</a></h2>
+<p>Once your protection configuration is complete and everything is working properly, it’s time to plan your go-live.
+Consider the following best practices in your go-live strategy:</p>
+<h3 id="release-only-well-protected-versions">Release only well-protected versions<a class="headerlink" href="#release-only-well-protected-versions" title="Permanent link">&para;</a></h3>
+<p>If you have implemented protection only partially,
+we strongly recommend you not to release such a version into production.</p>
+<p>The reason for this is that partially protected versions will teach reverse engineers the methods that you
+are using by introducing protection gradually, when it can be digested more easily.</p>
+<p>Having all protections implemented at once significantly raises the bar for the attackers.</p>
+<div class="admonition tip">
+<p class="admonition-title">Regularly adopt new versions of DexGuard!</p>
+<p>Due to DexGuard's polymorphic approach, every new release of your app will be hardened differently.
+As such, sunsetting older versions of your app at a regular cadence is always a good practice, 
+as it will force adversaries to restart their efforts again from scratch.
+Additionally, our RASP checks are under constant development.
+<strong>To stay up to speed with the attack surface, it is important that you update DexGuard and rebuild your
+protected application regularly.</strong></p>
+</div>
+<h3 id="check-your-crash-reporting">Check your crash reporting<a class="headerlink" href="#check-your-crash-reporting" title="Permanent link">&para;</a></h3>
+<p>Your application is now protected, and one of the most important protection techniques used in DexGuard
+is name obfuscation. This means that the names of classes and class members will be changed, which makes
+it difficult for reverse engineers, but it can also make it difficult for you to diagnose crashes.</p>
+<p>Guardsquare tools enable you to de-obfuscate crash stack traces automatically or semi-automatically.
+However, you need to verify that everything is configured correctly before you go live by simulating
+a crash and making sure you are able to get the de-obfuscated trace.</p>
+<h3 id="consider-threat-reporting">Consider threat reporting<a class="headerlink" href="#consider-threat-reporting" title="Permanent link">&para;</a></h3>
+<p>If you have configured RASP features, Guardsquare will detect various tools and techniques used to tamper
+with your application or use it in a compromised environment. By default, this information stays local 
+within the app, however you may want to benefit from centralizing this information and using it in your
+fraud monitoring process.</p>
+<p>Enabling Guardsquare's mobile threat monitoring solution <a href="threatcast.html">ThreatCast</a> is very straightforward and
+will bring a lot of visibility and useful insights into the attack vectors your application is suffering
+from after it has been released into the wild.</p>
+<h3 id="plan-deprecation-of-your-unprotected-application">Plan deprecation of your unprotected application<a class="headerlink" href="#plan-deprecation-of-your-unprotected-application" title="Permanent link">&para;</a></h3>
+<p>If you have an unprotected version of your application in production, it can still be attacked. 
+Plan an approach to phase it out so that only the properly protected version of the app is out there. </p>
+<p>We will always be happy to help you on all stages of your journey - from early onboarding to post-going-live.
+Do not hesitate to <a href="troubleshooting/reportingissues.html">reach out to us</a> if you have any questions or suggestions for our team.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Guardsquare
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/guardsquare" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/guardsquare-nv" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/guardsquare" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "search.suggest"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.caa56a14.min.js"></script>
+      
+    
+  </body>
+</html>
