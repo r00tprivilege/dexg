@@ -1,0 +1,36 @@
+/* Override Material theme admonition styles. These are the different types of info boxes we use. */
+.admonition[class] {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 .6rem;
+    border: 0px;
+    border-left: .2rem solid #448aff;
+    font-size: .64rem;
+    overflow: auto;
+    background-color: var(--md-admonition-bg-color);
+    color: var(--md-admonition-fg-color);
+}
+
+.md-typeset details:not([open]) {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+    padding: 0 .6rem;
+}
+
+.md-typeset details[class]:focus-within {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+    padding: 0 .6rem;
+}
+
+details[class] {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+    position: relative;
+    margin: 1.5625em 0;
+    padding: 0 .6rem;
+    border: none;
+    border-left: .2rem solid #448aff;
+    font-size: .64rem;
+    overflow: auto;
+    outline: none;
+    transition: box-shadow 0s ease;
+}

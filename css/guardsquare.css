@@ -1,0 +1,43 @@
+[data-md-color-primary="guardsquare"] {
+	--md-primary-fg-color: #004F91;
+	--md-primary-fg-color--light: #005dab;
+	--md-primary-fg-color--dark: #004F91;
+	--md-primary-bg-color: #fff;
+	--md-primary-bg-color--light: #ffffffb3;
+}
+
+[data-md-color-accent="guardsquare"] {
+	--md-accent-fg-color: #004F91;
+	--md-accent-fg-color--transparent: #005dab10;
+	--md-accent-fg-color--transparent-2: #005dab20;
+	--md-accent-bg-color: #fff;
+	--md-accent-bg-color--light: #ffffffb3;
+}
+
+/* Styling for the cards on the home page */
+.md-typeset .grid.cards > ul > li {
+  background-color: var(--md-accent-fg-color--transparent);
+  display: grid;
+  grid-template-rows: 0.1fr 0.1fr 2fr auto;
+}
+
+.grid > ul > li > p > a.md-button {
+    padding: .625em 1.2em .625em .625em;
+    grid-row: 4;
+    background-color: var(--md-accent-fg-color--transparent-2);
+}
+
+.md-content {
+  margin-bottom: 200px; /* Adjust the value to set the desired amount of whitespace */
+}
+
+th {
+    background-color: var(--md-accent-fg-color--transparent-2);
+}
+
+/* Center md tables that do not fill up the width of the column */
+.md-typeset__scrollwrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
