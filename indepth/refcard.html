@@ -1,0 +1,3871 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the DexGuard tool">
+      
+      
+        <meta name="author" content="Guardsquare">
+      
+      
+      
+        <link rel="prev" href="examples.html">
+      
+      
+        <link rel="next" href="optimizations.html">
+      
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.7">
+    
+    
+      
+        <title>Reference Card - DexGuard</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family='',+'Helvetica+Neue',+Helvetica,+Arial,+sans-serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"'', 'Helvetica Neue', Helvetica, Arial, sans-serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/guardsquare.css">
+    
+      <link rel="stylesheet" href="../css/extra2.css">
+    
+      <link rel="stylesheet" href="../css/text-alignment.css">
+    
+      <link rel="stylesheet" href="../css/admonition-styles.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NMXSB9');</script>
+<!-- End Google Tag Manager -->
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="guardsquare" data-md-color-accent="guardsquare">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMXSB9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+   
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="DexGuard" class="md-header__button md-logo" aria-label="DexGuard" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DexGuard
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference Card
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="DexGuard" class="md-nav__button md-logo" aria-label="DexGuard" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    DexGuard
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Quick Start
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guided Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manual Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video-tutorials/menu.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/downloading-dexguard.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Downloading DexGuard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/gradle-plugin.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gradle Plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/standalone.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standalone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/upgrading.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/repository.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maven Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/espresso.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Espresso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/cordovaplugin.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cordova Plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Configuration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../defaultconfigurations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Default Configs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RASP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            RASP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rasp.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/hardware.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS Integrity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../threatcast.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ThreatCast
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/attestation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    App Attestation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/malware.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Malware Protection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protection.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code & Data Protection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Languages & Platforms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Languages & Platforms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/java.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/kotlin.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kotlin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/hermes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hermes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    JavaScript
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_2" id="__nav_8_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quick Start
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/quickstart/dexguardintegration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DexGuard Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/quickstart/bestpractices.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_3" id="__nav_8_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Configuration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/configuration/configuration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Configuration Options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/configuration/filters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/configuration/assumptions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assumptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4" id="__nav_8_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/shrinking.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shrinking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2" id="__nav_8_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Protection
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Protection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2_1" id="__nav_8_4_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_8_4_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2_1_1" id="__nav_8_4_4_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_8_4_4_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Strings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/stringencryption.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Encryption
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/stringarray.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Array Transformation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2_2" id="__nav_8_4_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_8_4_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/nameobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Name Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/functionencryption.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Function Encryption
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/numberobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Number Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/arithmeticobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arithmetic Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/controlflowobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control Flow Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/propertydeclarationobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Property Declaration Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/propertyaccessobfuscation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Property Access Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/shuffling.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shuffling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_4_2_3" id="__nav_8_4_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Environment
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_8_4_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Environment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/features/debuggerobstruction.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugger Obstruction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_5" id="__nav_8_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/trouble-shooting/knownlimitations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Known Issues and Limitations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4_6" id="__nav_8_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/javascript/about/release-notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Flutter
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            Flutter
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/flutter/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/flutter/start-android.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/flutter/building-on-windows.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/flutter/configuration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/flutter/filters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/flutter/callbacks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Callbacks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages_platforms/flutter/troubleshooting.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    In Depth
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            In Depth
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="protectionreport/protectionreport.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protection Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pgo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profile-Guided Obfuscation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reference Card
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="refcard.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reference Card
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keepoverview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Keep Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keepoptionmodifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keep Option Modifiers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classspecification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Specifications
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="optimizations.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="attributes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attributes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="loggingremoval.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logging Removal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="runtime.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime Library
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="codepush.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Push
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="apkexpansionfiles.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    APK Expansion Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Addons
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../addons/ndk.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/androidstudio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android Studio Plugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/libraryrulesgenerator.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Library Rules Generator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/retrace.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ReTrace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/knownissues.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Known Issues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/reportingissues.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reporting Issues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/releasenotes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/systemrequirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/license.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keepoverview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Keep Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keepoptionmodifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keep Option Modifiers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classspecification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Specifications
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Reference Card</h1>
+
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows:</td>
+<td><code>dexguard</code> <em>options</em> ...</td>
+</tr>
+<tr>
+<td>Linux/macOS:</td>
+<td><code>dexguard.sh</code> <em>options</em> ...</td>
+</tr>
+</tbody>
+</table>
+<p>Typically:</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows:</td>
+<td><code>dexguard @myconfig.pro</code></td>
+</tr>
+<tr>
+<td>Linux/macOS:</td>
+<td><code>dexguard.sh @myconfig.pro</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../usage.html#at"><code>@</code></a><a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Short for '<code>-include</code> <em>filename</em>'.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#include"><code>-include</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Read configuration options from the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#basedirectory"><code>-basedirectory</code></a> <a href="../usage.html#filename"><em>directoryname</em></a></td>
+<td>Specifies the base directory for subsequent relative file names.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#injars"><code>-injars</code></a> <a href="../usage.html#classpath"><em>class_path</em></a></td>
+<td>Specifies the program jars (or apks, aabs, aars, wars, ears, jmods, zips, or directories).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#outjars"><code>-outjars</code></a> <a href="../usage.html#classpath"><em>class_path</em></a></td>
+<td>Specifies the names of the output jars (or apks, aabs, aars, wars, ears, jmods, zips, or directories).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#libraryjars"><code>-libraryjars</code></a> <a href="../usage.html#classpath"><em>class_path</em></a></td>
+<td>Specifies the library jars (or apks, aabs, aars, wars, ears, jmods, zips, or directories).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#androidsdk"><code>-androidsdk</code></a> [<em>directory</em>]</td>
+<td>Specifies the path to the Android SDK where DexGuard will read Android platform jars from.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#abifilter"><code>-abifilter</code></a> <a href="../usage.html#abifilter"><em>abi_list</em></a></td>
+<td>Specifies the ABIs that will be generated by DexGuard, if no existing native libraries are in the input.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#skipnonpubliclibraryclasses"><code>-skipnonpubliclibraryclasses</code></a></td>
+<td>Ignore non-public library classes.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontskipnonpubliclibraryclasses"><code>-dontskipnonpubliclibraryclasses</code></a></td>
+<td>Don't ignore non-public library classes (the default).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontskipnonpubliclibraryclassmembers"><code>-dontskipnonpubliclibraryclassmembers</code></a></td>
+<td>Don't ignore package visible library class members.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepdirectories"><code>-keepdirectories</code></a> [<a href="../usage.html#filters"><em>directory_filter</em></a>]</td>
+<td>Keep the specified directories in the output jars (or apks, aabs, aars, wars, ears, jmods, zips, or directories).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#multidex"><code>-multidex</code></a> <strong>deprecated</strong></td>
+<td>Split the Dalvik code across multiple dex files, if necessary.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printmaindexlist"><code>-printmaindexlist</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print to the standard output or to the given file the list of classes that are placed into the main dex and why they need to be stored there.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#applycodepushmapping"><code>-applycodepushmapping</code></a></td>
+<td>Specifies the mapping file for processing a CodePush update.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printcodepushmapping"><code>-printcodepushmapping</code></a></td>
+<td>Specifies to write an outputfile containing the mapping file for processing future CodePush updates.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontencrypthermesassetfile"><code>-dontencrypthermesassetfile</code></a></td>
+<td>Opt out of automatically encrypting the Hermes asset.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#instantappfeature"><code>-instantappfeature</code></a> name activity URL</td>
+<td>Create an Instant App feature.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#splitdimensions"><code>-splitdimensions</code></a> <strong>deprecated</strong> [<a href="../usage.html#filters"><em>dimension_filter</em></a>]</td>
+<td>Split the specified dimensions of resources in app bundles. No longer required, as DexGuard will now read this information from the app bundle directly.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontcompress"><code>-dontcompress</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>]</td>
+<td>Don't compress the specified files in output archives. As of DexGuard 9.3.12, <code>-dontcompress **.class</code> is replaced with <code>-dontcompress classes*.dex</code> if the dex file is compressed in the input.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#zipalign"><code>-zipalign</code></a> <em>n</em></td>
+<td>Align uncompressed files in output archives to multiples of the given number of bytes.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#target"><code>-target</code></a> <em>version</em></td>
+<td>Set the given version number in the processed classes.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#forceprocessing"><code>-forceprocessing</code></a></td>
+<td>Process the input, even if the output seems up to date.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keep"><code>-keep</code></a> [<a href="../usage.html#keepoptionmodifiers">,<em>modifier</em></a>,...] <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Preserve the specified classes <em>and</em> class members.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepclassmembers"><code>-keepclassmembers</code></a> [<a href="../usage.html#keepoptionmodifiers">,<em>modifier</em></a>,...] <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Preserve the specified class members, if their classes are preserved as well.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepclasseswithmembers"><code>-keepclasseswithmembers</code></a> [<a href="../usage.html#keepoptionmodifiers">,<em>modifier</em></a>,...] <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Preserve the specified classes <em>and</em> class members, if all of the specified class members are present.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepnames"><code>-keepnames</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Preserve the names of the specified classes <em>and</em> class members (if they aren't removed in the shrinking step).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepclassmembernames"><code>-keepclassmembernames</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Preserve the names of the specified class members (if they aren't removed in the shrinking step).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepclasseswithmembernames"><code>-keepclasseswithmembernames</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Preserve the names of the specified classes <em>and</em> class members, if all of the specified class members are present (after the shrinking step).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepcode"><code>-keepcode</code></a> [<a href="../usage.html#keepoptionmodifiers">,<em>modifier</em></a>,...] <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Preserve the specified code attributes, if their methods are preserved as well.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#if"><code>-if</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Specifies classes and class members that must be present to activate the subsequent <a href="../usage.html#keep"><code>-keep</code></a> option.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printseeds"><code>-printseeds</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>List classes and class members matched by the various <a href="../usage.html#keep"><code>-keep</code></a> options, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepresourcefiles"><code>-keepresourcefiles</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>]</td>
+<td>Preserve the specified Android resource files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepresources"><code>-keepresources</code></a> [<a href="#keepresourcesoptionmodifiers">,<em>keepresources_modifier</em></a>,...] [<a href="../usage.html#filters"><em>name_filter</em></a>]</td>
+<td>Preserve the specified Android resources.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepresourcexmlelements"><code>-keepresourcexmlelements</code></a> [<a href="../usage.html#filters"><em>name_filter</em></a>]</td>
+<td>Preserve the specified XML elements in Android resource XML files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontshrink"><code>-dontshrink</code></a></td>
+<td>Don't shrink the input class files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printusage"><code>-printusage</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>List dead code of the input class files, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printresourceusage"><code>-printresourceusage</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>List unused resources in the input APK/AAB, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#whyareyoukeeping"><code>-whyareyoukeeping</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Print details on why the given classes and class members are being kept in the shrinking step.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontoptimize"><code>-dontoptimize</code></a></td>
+<td>Don't optimize the input class files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#optimizations"><code>-optimizations</code></a> <a href="optimizations.html"><em>optimization_filter</em></a></td>
+<td>The optimizations to be enabled and disabled.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#optimizationpasses"><code>-optimizationpasses</code></a> <em>n</em></td>
+<td>The number of optimization passes to be performed.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#optimizeaggressively"><code>-optimizeaggressively</code></a></td>
+<td>Enables more aggressive assumptions during optimization.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#assumenosideeffects"><code>-assumenosideeffects</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Assume that the specified methods don't have any side effects, while optimizing.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#assumenoexternalsideeffects"><code>-assumenoexternalsideeffects</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Assume that the specified methods don't have any external side effects, while optimizing.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#assumenoescapingparameters"><code>-assumenoescapingparameters</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Assume that the specified methods don't let any reference parameters escape to the heap, while optimizing.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#assumenoexternalreturnvalues"><code>-assumenoexternalreturnvalues</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Assume that the specified methods don't return any external reference values, while optimizing.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#assumevalues"><code>-assumevalues</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Assume fixed values or ranges of values for primitive fields and methods, while optimizing.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#allowaccessmodification"><code>-allowaccessmodification</code></a></td>
+<td>Allow the access modifiers of classes and class members to be modified, while optimizing.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#mergeinterfacesaggressively"><code>-mergeinterfacesaggressively</code></a></td>
+<td>Allow any interfaces to be merged, while optimizing.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontobfuscate"><code>-dontobfuscate</code></a></td>
+<td>Don't obfuscate the input class files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printmapping"><code>-printmapping</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the mapping from old names to new names for classes and class members that have been renamed, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#applymapping"><code>-applymapping</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Reuse the given mapping, for incremental obfuscation.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printresourcefilenamemapping"><code>-printresourcefilenamemapping</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the mapping from old names to new names for resource files, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printresourcemapping"><code>-printresourcemapping</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the mapping from old names to new names for resources, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#applyresourcemapping"><code>-applyresourcemapping</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Reuse the given mapping for obfuscating resource names.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#obfuscationdictionary"><code>-obfuscationdictionary</code></a> <a href="../usage.html#filename"><em>filename</em></a> or <a href="../usage.html#namingschemes"><em>naming scheme</em></a></td>
+<td>Use either the words in the given dictionary file or the provided naming scheme to obfuscate field names and method names.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#classobfuscationdictionary"><code>-classobfuscationdictionary</code></a> <a href="../usage.html#filename"><em>filename</em></a> or <a href="../usage.html#namingschemes"><em>naming scheme</em></a></td>
+<td>Use either the words in the given dictionary file or the provided naming scheme to obfuscate class names.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#packageobfuscationdictionary"><code>-packageobfuscationdictionary</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Use the words in the given text file as obfuscated package names.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#useuniqueclassmembernames"><code>-useuniqueclassmembernames</code></a></td>
+<td>Ensure uniform obfuscated class member names for subsequent incremental obfuscation.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#distinctclassmembernames"><code>-distinctclassmembernames</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Ensure all member names within a particular class are unique.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontusemixedcaseclassnames"><code>-dontusemixedcaseclassnames</code></a></td>
+<td>Don't generate mixed-case class names while obfuscating.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keeppackagenames"><code>-keeppackagenames</code></a> [<em><a href="../usage.html#filters">package_filter</a></em>]</td>
+<td>Keep the specified package names from being obfuscated.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#flattenpackagehierarchy"><code>-flattenpackagehierarchy</code></a> [<em>package_name</em>]</td>
+<td>Repackage all packages that are renamed into the single given parent package.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#repackageclasses"><code>-repackageclasses</code></a> [<em>package_name</em>]</td>
+<td>Repackage all class files that are renamed into the single given package.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepattributes"><code>-keepattributes</code></a> [<em><a href="../usage.html#filters">attribute_filter</a></em>]</td>
+<td>Preserve the given optional attributes; typically <code>Exceptions</code>, <code>InnerClasses</code>, <code>Signature</code>, <code>Deprecated</code>, <code>SourceFile</code>, <code>SourceDir</code>, <code>LineNumberTable</code>, <code>LocalVariableTable</code>, <code>LocalVariableTypeTable</code>, <code>Synthetic</code>, <code>EnclosingMethod</code>, and <code>*Annotation*</code>.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepparameternames"><code>-keepparameternames</code></a></td>
+<td>Keep the parameter names and types of methods that are kept.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepkotlinintrinsics"><code>-keepkotlinintrinsics</code></a></td>
+<td>Keeps the Kotlin <code>Intrinsics</code> calls, while still obfuscating the names inside.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#renamesourcefileattribute"><code>-renamesourcefileattribute</code></a> [<em>string</em>]</td>
+<td>Put the given constant string in the <code>SourceFile</code> attributes.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#accessthroughreflection"><code>-accessthroughreflection</code></a> [,<em>encryptstrings</em>] <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Replace direct access to the specified classes and class members by reflection.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#obfuscatecode"><code>-obfuscatecode</code></a> [<a href="../usage.html##strengthmodifiers">,<em>strength</em></a>] <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Obfuscate the code of the specified methods.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontnatify"><code>-dontnatify</code></a></td>
+<td>Don't apply natification.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printnatificationmapping"><code>-printnatificationmapping</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the mapping from Java bytecode to native code generated when applying code obfuscation, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#virtualizecode"><code>-virtualizecode</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Virtualize the code of the specified methods.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#obfuscatejavascript"><code>-obfuscatejavascript</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>]</td>
+<td>Obfuscate the specified Javascript files, using the plugin defined with <code>-javascriptplugin</code>.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#javascriptconfiguration"><code>-javascriptconfiguration</code></a> <a href="../usage.html#filename"><em>filename</em></a> [[<em>string</em>]]</td>
+<td>Use the specified plugin jar and optional string to obfuscate Javascript files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#javascriptplugin"><code>-javascriptplugin</code></a> <a href="../usage.html#filename"><em>filename</em></a> [[<em>string</em>]]</td>
+<td>Use the specified plugin jar and optional string to obfuscate Javascript files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptclasses"><code>-encryptclasses</code></a> [<a href="../usage.html#filters"><em>class_filter</em></a>]</td>
+<td>Encrypt classes whose names match the given filter.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptclasses"><code>-encryptclasses</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Encrypt classes that match the class specification.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptstrings"><code>-encryptstrings</code></a> [<a href="../usage.html#filters"><em>string_filter</em></a>]</td>
+<td>Encrypt string constants that match the given filter.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptstrings"><code>-encryptstrings</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Encrypt string constants in the specified classes or class members.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#adaptclassstrings"><code>-adaptclassstrings</code></a> [<a href="../usage.html#filters"><em>class_filter</em></a>]</td>
+<td>Adapt string constants in the specified classes, based on the obfuscated names of any corresponding classes.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepkotlinmetadata"><code>-keepkotlinmetadata</code></a> <strong>deprecated</strong></td>
+<td>Keep and adapt <a href="../languages_platforms/kotlin.html">kotlin.Metadata</a> annotations if present.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#adaptresourcefilenames"><code>-adaptresourcefilenames</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>]</td>
+<td>Rename the specified resource files, based on the obfuscated names of the corresponding class files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#adaptresourcefilecontents"><code>-adaptresourcefilecontents</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>]</td>
+<td>Update the contents of the specified resource files, based on the obfuscated names of the processed classes.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontadaptserviceproviderinterfaceconfigurationfiles"><code>-dontadaptserviceproviderconfigurationfiles</code></a></td>
+<td>Don't automatically adapt Service Provider Interface configuration files located in <code>assets/services</code>.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#stripnativelibrarysections"><code>-stripnativelibrarysections</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>]</td>
+<td>Apply additional obfuscation on native libraries, such as shrinking sections which are unused at runtime.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#resourcefilenameobfuscationdictionary"><code>-resourcefilenameobfuscationdictionary</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Use the lines in the given text file as obfuscated Android resource file names.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#excludedresourcefilenames"><code>-excludedresourcefilenames</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Use the lines in the given text file as denylisted obfuscated Android resource file names.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keepresourcexmlattributenames"><code>-keepresourcexmlattributenames</code></a> [<a href="../usage.html#filters"><em>name_filter</em></a>]</td>
+<td>Preserve the specified attribute names in binary Android resource XML files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptmetadata"><code>-encryptmetadata</code></a> [<a href="../usage.html#filters"><em>string_filter</em></a>]</td>
+<td>Encrypt the specified Android manifest metadata.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptassetfiles"><code>-encryptassetfiles</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>]</td>
+<td>Encrypt the specified Android asset files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptresources"><code>-encryptresources</code></a> [<a href="../usage.html#filters"><em>name_filter</em></a>]</td>
+<td>Encrypt the specified Android resources (strings).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptresourcefiles"><code>-encryptresourcefiles</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>]</td>
+<td>Encrypt the specified Android resource files (layout, menu, and xml files).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#encryptnativelibraries"><code>-encryptnativelibraries</code></a> [<a href="../usage.html#filefilters"><em>file_filter</em></a>] [<em>percentage</em>]</td>
+<td>Encrypt the specified Android native libraries.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#compressencryptednativelibraries"><code>-compressencryptednativelibraries</code></a></td>
+<td>Compress Android native libraries before encrypting them.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#randomizationseed"><code>-randomizationseed</code></a> <em>integer</em></td>
+<td>Provide an additional value to take into account when generating a seed value to randomize the obfuscation.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printclassencryption"><code>-printclassencryption</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the class encryption groups and the plugins which were used to encrypt them, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printstringencryptionm"><code>-printstringencryption</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the string encryption groups and the plugins which were used to encrypt them, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printassetencryption"><code>-printassetencryption</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the asset encryption groups and the plugins which were used to encrypt them, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printresourceencryption"><code>-printresourceencryption</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the resource encryption groups and the plugins which were used to encrypt them, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printnativelibraryencryption"><code>-printnativelibraryencryption</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Print the native library encryption groups and the plugins which were used to encrypt them, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontpreverify"><code>-dontpreverify</code></a></td>
+<td>Don't preverify the processed class files.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#microedition"><code>-microedition</code></a></td>
+<td>Target the processed class files at Java Micro Edition.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#android"><code>-android</code></a></td>
+<td>Target the processed class files at Android.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dalvik"><code>-dalvik</code></a></td>
+<td>Target and convert the processed class files for Android's Dalvik VM.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#protobuffer"><code>-protobuffer</code></a> <strong>deprecated</strong></td>
+<td>Write the processed resource files in protobuffer format, for Android app bundles. No longer required, as app bundles will now be detected automatically by DexGuard.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keystore"><code>-keystore</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Sign processed jars with a private key from the given key store.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keystorepassword"><code>-keystorepassword</code></a> <em>password</em></td>
+<td>The password of the key store.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keyalias"><code>-keyalias</code></a> <em>alias</em></td>
+<td>The alias of the key that you want to select from the key store.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#keypassword"><code>-keypassword</code></a> <em>password</em></td>
+<td>The password of the key.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#pkcs11configuration"><code>-pkcs11configuration</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>The configuration file of the PKCS11 module.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#certificatelineage"><code>-certificatelineage</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Include the certificate lineage from the given file in the signature.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#apksignatureschemes"><code>-apksignatureschemes</code></a> [<a href="../usage.html#filters"><em>signature_scheme_filter</em></a>]</td>
+<td>Sign with the given signature schemes when creating an apk.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#verbose"><code>-verbose</code></a></td>
+<td>Write out some more information during processing.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontnote"><code>-dontnote</code></a> [<a href="../usage.html#filters"><em>class_filter</em></a>]</td>
+<td>Don't print notes about potential mistakes or omissions in the configuration.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontwarn"><code>-dontwarn</code></a> [<a href="../usage.html#filters"><em>class_filter</em></a>]</td>
+<td>Don't warn about unresolved references at all.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#ignorewarnings"><code>-ignorewarnings</code></a></td>
+<td>Print warnings about unresolved references, but continue processing anyhow.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printconfiguration"><code>-printconfiguration</code></a>[<a href="../usage.html#printconfigurationoptionmodifier">,<em>modifier</em></a>] [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Write out the entire configuration, in traditional DexGuard style, to the standard output or to the given file. Use <code>includesensitive</code> to also print out keystore information.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printlibraryconfiguration"><code>-printlibraryconfiguration</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Write out the configuration required for the processed library, in traditional DexGuard style, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printstatistics"><code>-printstatistics</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Write out statistics about the processed code, to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printinjectmapping"><code>-printinjectmapping</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Write out a mapping file that lists which RASP checking code was injected into which method.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printthreatcastmapping"><code>-printthreatcastmapping</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Write out a mapping file that lists the human readable method names for each check location identifier.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#dontuploadthreatcastmapping"><code>-dontuploadthreatcastmapping</code></a> [<a href="../usage.html#filename"><em>filename</em></a>]</td>
+<td>Don't upload the ThreatCast mapping file automatically.</td>
+</tr>
+<tr>
+<td><a href="../threatcast.html#app-user-id"><code>-threatcastappuseridgetter</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Custom AUID getter method that will be executed to collect the app user ID and send it to ThreatCast when a RASP threat is detected.</td>
+</tr>
+<tr>
+<td><a href="../threatcast.html#configuration"><code>-usethreatcastdebugclient</code></a></td>
+<td>Use a debug version of ThreatCast which prints additional information to logcat. Apps cannot be released when this version of ThreatCast is used.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#addconfigurationdebugging"><code>-addconfigurationdebugging</code></a></td>
+<td>Instrument the processed code with debugging statements that print out suggestions for missing DexGuard configuration.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#addprofiling"><code>-addprofiling</code></a></td>
+<td>Instrument the processed code with profiling statements for aiding with automatic configuration.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#available-rasp-checks"><code>-raspchecks</code></a> <a href="../rasp.html#available-rasp-checks"><em>RASP detector list</em></a></td>
+<td>Enable one or more of the RASP detectors.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#enabling-rasp-checks"><code>-raspchecks</code></a> <a href="../rasp.html#available-rasp-checks"><em>RASP detector list</em></a> spray</td>
+<td>Enable spray injection for the specified RASP detectors.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#enabling-rasp-checks"><code>-raspchecks</code></a> <a href="../rasp.html#available-rasp-checks"><em>RASP detector list</em></a> entrypoint</td>
+<td>Enable entrypoint injection for the specified RASP detectors.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#enabling-rasp-checks"><code>-raspchecks</code></a> <a href="../rasp.html#available-rasp-checks"><em>RASP detector list</em></a> checkpoint[,allowdescriptivenames] <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Enable a RASP checkpoint for the specified detectors and methods.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#reacting-to-rasp-checks"><code>-raspcontinueon</code></a> <a href="../rasp.html#available-rasp-checks"><em>RASP detector list</em></a></td>
+<td>By default, an app will crash on a RASP threat, unless listed.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#custom-reaction-strategies"><code>-raspcallback</code></a> <a href="../rasp.html#configure-callback"><em>RASP detector list</em></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Custom callback that will be executed when a RASP threat is detected.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#performance"><code>-raspdenylist</code></a> <a href="../usage.html#classspecification"><em>class_specification</em></a></td>
+<td>Denylist to filter RASP injection locations.</td>
+</tr>
+<tr>
+<td><a href="pgo.html#advanced-configuration"><code>-noinjectioncoldzone</code></a> <em>integer</em></td>
+<td>Denylists the given percentage of the least executed methods in the profiling data in the <a href="pgo.html">PGO workflow</a>.</td>
+</tr>
+<tr>
+<td><a href="pgo.html#advanced-configuration"><code>-noinjectionhotzone</code></a> <em>integer</em></td>
+<td>Denylists the given percentage of the most executed methods in the profiling data in the <a href="pgo.html">PGO workflow</a>.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#verification"><code>-raspaggressiveness</code></a> <em>Detector name</em> <em>aggressiveness level</em></td>
+<td>Change the level of aggressiveness of RASP injection for a certain RASP detector.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#certificate-checker"><code>-raspcertificatehash</code></a> <em>certificate hash</em></td>
+<td>The expected certificate hash of the signing key.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#excluding-injection-locations"><code>-debugraspchecks</code></a></td>
+<td>Log RASP checks when they are executed. Useful for debugging the performance impact of RASP.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#disableapktamper"><code>-disableapktamper</code></a></td>
+<td>Disables part of the <code>apptamper</code> check that is sensitive to re-signing.</td>
+</tr>
+<tr>
+<td><a href="../rasp.html#debug-blocker"><code>-dontinjectdebugblocker</code></a></td>
+<td>Disables part of the <code>debug</code> detector that blocks debug processes from attaching to the application.</td>
+</tr>
+<tr>
+<td><a href="../troubleshooting/knownissues.html#intunecompatibility"><code>-intunecompatibility</code></a></td>
+<td>Ignores certain hooks associated with Microsoft Intune's Mobile Application Management SDK, if those libraries are detected at runtime.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#disableprotectionreport"><code>-disableprotectionreport</code></a></td>
+<td>Disables the generation of protection reports.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#disabletelemetry"><code>-disabletelemetry</code></a></td>
+<td>Disables the sending of usage reports to Guardsquare's servers.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#disablebuildtelemetry"><code>-disablebuildtelemetry</code></a></td>
+<td>Disables the sending of usage reports to Guardsquare's servers at processing time.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#disableruntimetelemetry"><code>-disableruntimetelemetry</code></a></td>
+<td>Disables the sending of usage reports to Guardsquare's servers at application runtime. Only relevant with <a href="../usage.html#addconfigurationdebugging"><code>-addconfigurationdebugging</code></a>.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#protectionreportdirectory"><code>-protectionreportdirectory</code></a> <a href="../usage.html#filename"><em>directoryname</em></a></td>
+<td>Specifies the location where protection reports shall be created.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#intermediatedirectory"><code>-intermediatedirectory</code></a> <a href="../usage.html#filename"><em>directoryname</em></a></td>
+<td>Specifies the location of DexGuard's intermediate directory.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#allowoverwrite"><code>allowoverwrite</code></a></td>
+<td>Specifies that files and directories in the given intermediate directory may be overwritten.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#disableversioncheck"><code>-disableversioncheck</code></a></td>
+<td>Disables performing the version check.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#profilingdata"><code>-profilingdata</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Specifies the location of the profiling data file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#printraspdenylist"><code>-printraspdenylist</code></a> <a href="../usage.html#filename"><em>filename</em></a></td>
+<td>Print the RASP denylist specified or generated from the specified profiling data to the standard output or to the given file.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#malwareprotect"><code>-malwareprotect</code></a> <a href="../features/malware.html"><em>malware detector list</em></a></td>
+<td>Enable the specified malware detectors for all activities and fragments. Allowed malware detectors are <code>a11y</code>, <code>screenrecording</code>, <code>overlays</code>, and <code>activityinjection</code>.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#malwareprotect"><code>-malwareprotect</code></a> <a href="../features/malware.html"><em>malware detector list</em></a> <a href="../usage.html#classspecification"><em>class specification</em></a></td>
+<td>Enable the specified malware detectors for activities and fragments matching the specified class specification. Allowed malware detectors are <code>a11y</code>, <code>screenrecording</code>, <code>overlays</code>, and <code>activityinjection</code>.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#malwaremessage"><code>-malwaremessage</code></a> <a href="../features/malware.html"><em>malware detector list</em></a> <em>string/my_message</em></td>
+<td>Specifies a custom warning message for the specified malware detectors. Allowed malware detectors are <code>a11y</code>, <code>overlays</code>, and <code>activityinjection</code>.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#malwareallowstores"><code>-malwareallowstores</code></a> <em>package name list</em></td>
+<td>Specifies the allowlist of stores for the <code>a11y</code> malware detector.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#malwarecallback"><code>-malwarecallback</code></a> <a href="../features/malware.html"><em>malware detector list</em></a> <a href="../usage.html#classspecification"><em>class specification</em></a></td>
+<td>Specifies a callback that will be called when any of the specified malware detectors trigger. This is currently only supported for the <code>a11y</code> malware detector.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#malwarecrashon"><code>-malwarecrashon</code></a> <a href="../features/malware.html"><em>malware detector list</em></a></td>
+<td>Specifies that the app should crash when any of the specified malware detectors trigger. This is currently only supported for the <code>a11y</code> malware detector.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#malwarewarnon"><code>-malwarewarnon</code></a> <a href="../features/malware.html"><em>malware detector list</em></a></td>
+<td>Specifies that a warning message should be shown when any of the specified malware detectors trigger. This is enabled by default for all malware detectors and can currently only be disabled for the <code>a11y</code> malware detector.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#malwarea11ydeviceadmin"><code>-malwarea11ydeviceadmin</code></a></td>
+<td>Specifies to enable the admin accessibility service subcheck of the <code>a11y</code> malware detector.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#optimizeaggressively"><code>-optimizeaggressively</code></a></td>
+<td>Enables more aggressive assumptions during optimization.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#archivedebugfiles"><code>-archivedebugfiles</code></a></td>
+<td>Packages the inputs and outputs of DexGuard in a zip file to allow reproducing issues easily.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#compatibilityfeatures"><code>-compatibilityfeatures</code></a> <em>feature list</em></td>
+<td>Enable or disable compatibility features (for example automatic ViewModel processing for Hilt components).</td>
+</tr>
+<tr>
+<td><a href="../usage.html#reactnativebundlename"><code>-reactnativebundlename</code></a> [<em>string</em>]</td>
+<td>Specifies the React Native bundle name, if it cannot be detected automatically. Not needed if the bundle has not been renamed from the default <code>index.android.bundle</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li><em>class_path</em> is a list of jars, apks, aabs, aars, wars, ears, jmods, zips,
+  and directories, with optional filters, separated by path separators.</li>
+<li><em>filename</em> can contain Java system properties delimited by
+  '<strong>&lt;</strong>' and '<strong>&gt;</strong>'.</li>
+<li>If <em>filename</em> contains special characters, the entire name should be
+  quoted with single or double quotes.</li>
+<li><em>abi_list</em> is a comma separated list of ABIs that can include <code>x86</code>, <code>x86_64</code>, <code>arm64-v8a</code>, <code>armeabi-v7a</code>.</li>
+</ul>
+<h2 id="keepoverview">Overview of <code>Keep</code> Options<a class="headerlink" href="#keepoverview" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Keep</th>
+<th>From being removed or renamed</th>
+<th>From being renamed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classes and class members</td>
+<td><a href="../usage.html#keep"><code>-keep</code></a></td>
+<td><a href="../usage.html#keepnames"><code>-keepnames</code></a></td>
+</tr>
+<tr>
+<td>Class members only</td>
+<td><a href="../usage.html#keepclassmembers"><code>-keepclassmembers</code></a></td>
+<td><a href="../usage.html#keepclassmembernames"><code>-keepclassmembernames</code></a></td>
+</tr>
+<tr>
+<td>Classes and class members, if class members present</td>
+<td><a href="../usage.html#keepclasseswithmembers"><code>-keepclasseswithmembers</code></a></td>
+<td><a href="../usage.html#keepclasseswithmembernames"><code>-keepclasseswithmembernames</code></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="keepoptionmodifiers">Keep Option Modifiers<a class="headerlink" href="#keepoptionmodifiers" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../usage.html#includedescriptorclasses"><code>includedescriptorclasses</code></a></td>
+<td>Also keep any classes in the descriptors of specified fields and methods.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#includecode"><code>includecode</code></a></td>
+<td>Also keep the code of the specified methods unchanged.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#allowshrinking"><code>allowshrinking</code></a></td>
+<td>Allow the specified entry points to be removed in the shrinking step.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#allowoptimization"><code>allowoptimization</code></a></td>
+<td>Allow the specified entry points to be modified in the optimization step.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#allowobfuscation"><code>allowobfuscation</code></a></td>
+<td>Allow the specified entry points to be renamed in the obfuscation step.</td>
+</tr>
+<tr>
+<td><a href="../usage.html#inmaindex"><code>inmaindex</code></a></td>
+<td>Force the specified entry points to be placed in the primary dex file.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="classspecification">Class Specifications<a class="headerlink" href="#classspecification" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code>[@annotationtype] [[!]public|final|abstract|@ ...] [!]interface|class|enum classname
+    [extends|implements [@annotationtype] classname]
+[{
+    [@annotationtype]
+    [[!]public|private|protected|static|volatile|transient ...]
+    &lt;fields&gt; | (fieldtype fieldname [= values]);
+
+    [@annotationtype]
+    [[!]public|private|protected|static|synchronized|native|abstract|strictfp ...]
+    &lt;methods&gt; | &lt;init&gt;(argumenttype,...) | classname(argumenttype,...) | (returntype methodname(argumenttype,...));
+
+    [@annotationtype] [[!]public|private|protected|static ... ] *;
+    ...
+}]
+</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li>Class names must always be fully qualified, i.e. including their
+  package names.</li>
+<li>Types in <em>classname</em>, <em>annotationtype</em>, <em>returntype</em>, and
+  <em>argumenttype</em> can contain wildcards: '<code>?</code>' for a single character,
+  '<code>*</code>' for any number of characters (but not the package separator),
+  '<code>**</code>' for any number of (any) characters, '<code>%</code>' for any primitive
+  type, '<code>***</code>' for any type, '<code>...</code>' for any number of arguments, and
+  '<code>&lt;n&gt;</code>' for the <em>n</em>'th matched wildcard in the same option.</li>
+<li><em>fieldname</em> and <em>methodname</em> can contain wildcards as well: '<code>?</code>'
+  for a single character and '<code>*</code>' for any number of characters.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Guardsquare
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/guardsquare" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/guardsquare-nv" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/guardsquare" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "search.suggest"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.caa56a14.min.js"></script>
+      
+    
+  </body>
+</html>
