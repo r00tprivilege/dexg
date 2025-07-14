@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.guardsquare.dexguard.rasp.callback","l":"DetectionReport"}];updateSearchResults();
